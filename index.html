@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jaimez Grocery — Productos mexicanos auténticos en Brick, NJ</title>
+<meta name="description" content="Jaimez Grocery: tienda de abarrotes y productos mexicanos en Brick, NJ. Aceptamos EBT/SNAP. Envíos de dinero Maxi Send, Lottery y todo tipo de pago. Always Quality." />
+<meta name="theme-color" content="#1E7A3D" />
+<link rel="icon" type="image/png" href="images/09-logo-oficial.png" />
+<link rel="apple-touch-icon" href="images/09-logo-oficial.png" />
+
+<meta property="og:title" content="Jaimez Grocery — Productos mexicanos auténticos" />
+<meta property="og:description" content="Tienda de abarrotes y productos mexicanos en Brick, NJ. Aceptamos EBT/SNAP. Maxi Send · Lottery. Always Quality." />
+<meta property="og:type" content="business.business" />
+<meta property="og:image" content="images/09-logo-oficial.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GroceryStore",
+  "name": "Jaimez Grocery",
+  "image": "images/09-logo-oficial.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1017 Cedar Bridge Ave",
+    "addressLocality": "Brick",
+    "addressRegion": "NJ",
+    "postalCode": "08723",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-609-832-5274",
+  "priceRange": "$",
+  "paymentAccepted": "EBT, SNAP, Apple Pay, Visa, Mastercard, Contactless",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:30",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --verde: #1E7A3D;
+    --verde-osc: #155C2D;
+    --rojo: #D62828;
+    --rojo-osc: #A41E1E;
+    --crema: #FBF7F0;
+    --crema-2: #F4EEE2;
+    --negro: #1A1A1A;
+    --maiz: #F2C14E;
+    --gris: #6B6257;
+    --sombra: 0 6px 22px rgba(26,26,26,.10);
+    --sombra-fuerte: 0 10px 30px rgba(26,26,26,.16);
+    --radio: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--negro); background: var(--crema);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; }
+  .titulo {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: clamp(1.6rem, 6vw, 2.4rem); color: var(--verde);
+    line-height: 1.15; margin-bottom: 8px; text-align: center;
+  }
+  .titulo .sub {
+    display: block; font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: .95rem; color: var(--gris); margin-top: 6px;
+  }
+  .titulo::after {
+    content: ""; display: block; width: 64px; height: 4px;
+    background: var(--rojo); border-radius: 4px; margin: 14px auto 0;
+  }
+
+  .papel {
+    height: 26px;
+    background-image:
+      linear-gradient(135deg, transparent 50%, var(--crema) 50%),
+      linear-gradient(45deg, transparent 50%, var(--crema) 50%);
+    background-size: 26px 26px; background-repeat: repeat-x; background-position: bottom;
+  }
+  .papel.verde { background-color: var(--verde); }
+  .papel.rojo  { background-color: var(--rojo); }
+  .papel.maiz  { background-color: var(--maiz); }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,247,240,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--crema-2); box-shadow: 0 2px 10px rgba(26,26,26,.05);
+  }
+  .topbar .row { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 10px; }
+  .topbar .brand { display: flex; align-items: center; gap: 10px; }
+  .topbar .brand img { height: 34px; width: auto; }
+  .topbar .actions { display: flex; align-items: center; gap: 10px; }
+  .lang {
+    display: inline-flex; border: 2px solid var(--crema-2); border-radius: 999px;
+    overflow: hidden; font-weight: 700; font-size: .78rem; background: #fff;
+  }
+  .lang button {
+    border: none; background: transparent; padding: 6px 11px; cursor: pointer;
+    color: var(--gris); font-weight: 700; font-family: 'Poppins', sans-serif;
+  }
+  .lang button.active { background: var(--verde); color: #fff; }
+  .btn-call-top {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--rojo); color: #fff; font-weight: 600; font-size: .92rem;
+    padding: 9px 15px; border-radius: 999px; box-shadow: var(--sombra); white-space: nowrap;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    min-height: 52px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.02rem;
+    padding: 0 22px; border-radius: 14px; cursor: pointer; border: none;
+    transition: transform .12s ease; box-shadow: var(--sombra);
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-rojo  { background: var(--rojo); color: #fff; }
+  .btn-verde { background: var(--verde); color: #fff; }
+  .btn-blanco { background: #fff; color: var(--negro); border: 2px solid var(--crema-2); }
+
+  .hero {
+    background: radial-gradient(900px 380px at 50% -10%, rgba(30,122,61,.18), transparent), var(--crema);
+    text-align: center; padding: 36px 0 48px;
+  }
+  .hero .logo {
+    width: min(460px, 92%); margin: 0 auto 18px;
+    filter: drop-shadow(0 12px 28px rgba(26,26,26,.24)); border-radius: 16px;
+  }
+  .hero h1 {
+    font-family: 'Pacifico', cursive; font-weight: 400;
+    font-size: clamp(2.4rem, 11vw, 4rem); color: var(--negro);
+    line-height: 1.25; padding-bottom: 6px; margin-bottom: 18px;
+  }
+  .hero .tagline {
+    font-family: 'Poppins', sans-serif; font-weight: 600;
+    font-size: clamp(1rem, 4.5vw, 1.3rem); color: var(--verde);
+    line-height: 1.5; margin-bottom: 6px;
+  }
+  .hero .tagline .en { color: var(--rojo); }
+  .estado {
+    display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: .98rem;
+    padding: 9px 18px; border-radius: 999px; margin: 18px 0 26px;
+    background: #fff; box-shadow: var(--sombra);
+  }
+  .estado .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--gris); box-shadow: 0 0 0 4px rgba(0,0,0,.06); }
+  .estado.abierto .dot { background: #2BB24C; box-shadow: 0 0 0 4px rgba(43,178,76,.22); animation: pulse 1.8s infinite; }
+  .estado.cerrado .dot { background: var(--rojo); box-shadow: 0 0 0 4px rgba(214,40,40,.18); }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 4px rgba(43,178,76,.22);} 50% { box-shadow: 0 0 0 8px rgba(43,178,76,0);} }
+  .estado small { color: var(--gris); font-weight: 500; }
+
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .hero-btns .btn { flex: 1 1 auto; min-width: 150px; }
+
+  .sobre .grid { display: grid; gap: 22px; }
+  .sobre .fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sobre .fotos img { border-radius: var(--radio); box-shadow: var(--sombra); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .sobre p { font-size: 1.05rem; color: #3a352e; margin-top: 4px; }
+  .sobre p + p { margin-top: 14px; }
+  .sobre .fachada-banner {
+    width: 100%; height: auto; display: block;
+    border-radius: var(--radio); box-shadow: var(--sombra-fuerte);
+    margin: 6px 0 26px;
+  }
+  .sobre .fotos-side img {
+    width: 100%; border-radius: var(--radio); box-shadow: var(--sombra);
+    aspect-ratio: 4/3; object-fit: cover;
+  }
+
+  .prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 26px; }
+  .card { background: #fff; border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); display: flex; flex-direction: column; }
+  .card img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .card .card-body { padding: 14px 16px 18px; }
+  .card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--negro); margin-bottom: 4px; }
+  .card p { font-size: .9rem; color: var(--gris); }
+
+  .lista-prod { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-top: 26px; }
+  .chip { background: #fff; border: 2px solid var(--crema-2); padding: 9px 15px; border-radius: 999px; font-weight: 500; font-size: .92rem; }
+
+  .ebt {
+    margin: 30px auto 0; max-width: 560px;
+    background: linear-gradient(135deg, var(--verde), var(--verde-osc));
+    color: #fff; text-align: center; border-radius: var(--radio); padding: 22px 24px; box-shadow: var(--sombra-fuerte);
+  }
+  .ebt strong { font-family: 'Poppins', sans-serif; font-size: 1.45rem; display: block; }
+  .ebt span { opacity: .92; }
+
+  .serv { background: var(--crema-2); }
+  .serv-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 26px; }
+  .serv-card {
+    background: #fff; border-radius: var(--radio); padding: 18px; box-shadow: var(--sombra);
+    text-align: center; border-top: 5px solid var(--verde); overflow: hidden;
+  }
+  .serv-card.rojo { border-top-color: var(--rojo); }
+  .serv-card.maiz { border-top-color: var(--maiz); }
+  .serv-card .serv-img {
+    width: calc(100% + 36px); max-width: calc(100% + 36px);
+    margin: -18px -18px 16px; height: auto; display: block;
+  }
+  .serv-card .pago-img { width: 100%; border-radius: 12px; margin-top: 12px; border: 1px solid var(--crema-2); }
+  .serv-card .ico { font-size: 2.4rem; line-height: 1; }
+  .serv-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.25rem; margin: 6px 0 6px; color: var(--negro); }
+  .serv-card p { color: var(--gris); font-size: .98rem; }
+  .pagos { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .pagos span { background: var(--crema); border: 1px solid var(--crema-2); padding: 6px 12px; border-radius: 8px; font-size: .85rem; font-weight: 600; }
+
+  .ubi-grid { display: grid; gap: 22px; margin-top: 26px; }
+  .mapa { border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); border: 3px solid #fff; }
+  .mapa iframe { width: 100%; height: 300px; border: 0; display: block; }
+  .nap { background: #fff; border-radius: var(--radio); padding: 24px; box-shadow: var(--sombra); }
+  .nap .item { display: flex; gap: 13px; align-items: flex-start; padding: 11px 0; }
+  .nap .item + .item { border-top: 1px solid var(--crema-2); }
+  .nap .ico { font-size: 1.3rem; flex-shrink: 0; width: 26px; text-align: center; }
+  .nap .item .label { font-weight: 700; font-family: 'Poppins', sans-serif; font-size: .95rem; }
+  .nap .item .val { color: #3a352e; font-size: .97rem; }
+  .nap .item .val a { color: var(--rojo); font-weight: 600; }
+  .horario-tabla { width: 100%; font-size: .96rem; }
+  .horario-tabla td { padding: 3px 0; }
+  .horario-tabla td:last-child { text-align: right; font-weight: 600; }
+  .horario-tabla tr.hoy td { color: var(--verde); font-weight: 700; }
+  .ubi-btns { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .ubi-btns .btn { flex: 1 1 auto; }
+
+  footer { background: var(--negro); color: #f2ede4; padding: 44px 0 30px; text-align: center; }
+  footer .fbrand { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: #fff; margin-bottom: 6px; }
+  footer .fnap { color: #c8c0b4; font-size: .95rem; line-height: 1.8; margin-bottom: 18px; }
+  footer .fnap a { color: var(--maiz); }
+  footer .fbtns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+  footer .fbtn {
+    display: inline-flex; align-items: center; gap: 8px; background: #2a2a2a; color: #fff;
+    padding: 11px 18px; border-radius: 12px; font-weight: 600; font-size: .9rem; border: 1px solid #3a3a3a;
+  }
+  footer .legal { color: #8a837a; font-size: .8rem; border-top: 1px solid #2e2e2e; padding-top: 18px; margin-top: 6px; }
+  footer .legal a { color: #b3aca2; }
+
+  @media (min-width: 760px) {
+    .sobre .grid { grid-template-columns: 1.1fr 1fr; align-items: center; }
+    .prod-grid { grid-template-columns: repeat(3, 1fr); }
+    .serv-grid { grid-template-columns: repeat(3, 1fr); }
+    .ubi-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+    .mapa iframe { height: 360px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap row">
+      <a href="#hero" class="brand"><img src="images/09-logo-oficial.png" alt="Jaimez Grocery" /></a>
+      <div class="actions">
+        <div class="lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" onclick="applyLang('es')">ES</button>
+          <button type="button" data-lang="en" onclick="applyLang('en')">EN</button>
+        </div>
+        <a href="tel:+16098325274" class="btn-call-top" data-es="📞 Llamar" data-en="📞 Call">📞 Llamar</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="hero">
+    <div class="wrap">
+      <img class="logo" src="images/09-logo-framed.jpg" alt="Logo oficial de Jaimez Grocery" />
+      <h1>Jaimez Grocery</h1>
+      <p class="tagline" data-html
+         data-es='Productos mexicanos auténticos · <span class="en">Always Quality</span>'
+         data-en='Authentic Mexican products · <span class="en">Always Quality</span>'>
+         Productos mexicanos auténticos · <span class="en">Always Quality</span>
+      </p>
+
+      <div class="estado" id="estado">
+        <span class="dot"></span>
+        <span id="estado-texto">…</span>
+        <small id="estado-detalle"></small>
+      </div>
+
+      <div class="hero-btns">
+        <a href="tel:+16098325274" class="btn btn-rojo" data-es="📞 Llamar" data-en="📞 Call">📞 Llamar</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1017+Cedar+Bridge+Ave,+Brick,+NJ+08723" target="_blank" rel="noopener" class="btn btn-verde" data-es="📍 Cómo llegar" data-en="📍 Directions">📍 Cómo llegar</a>
+        <a href="#ubicacion" class="btn btn-blanco" data-es="🕒 Ver horario" data-en="🕒 See hours">🕒 Ver horario</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="papel verde"></div>
+
+  <section class="sobre" id="sobre">
+    <div class="wrap">
+      <h2 class="titulo" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</h2>
+      <img class="fachada-banner" src="images/01-fachada-jaimez-grocery-edit3.jpg" alt="Fachada de Jaimez Grocery en Brick, NJ" loading="lazy" />
+      <div class="grid">
+        <div>
+          <p data-html
+             data-es="En <strong>Jaimez Grocery</strong> somos tu tienda de abarrotes y productos mexicanos en el corazón de <strong>Brick, NJ</strong>. Traemos a la comunidad los sabores de casa: lo que buscas, fresco y a buen precio."
+             data-en="At <strong>Jaimez Grocery</strong> we are your grocery store for authentic Mexican products in the heart of <strong>Brick, NJ</strong>. We bring the community the flavors of home — what you're looking for, fresh and at a fair price.">
+             En <strong>Jaimez Grocery</strong> somos tu tienda de abarrotes y productos mexicanos en el corazón de <strong>Brick, NJ</strong>. Traemos a la comunidad los sabores de casa: lo que buscas, fresco y a buen precio.
+          </p>
+          <p data-html
+             data-es="Atendemos en <strong>español</strong>, con el trato cálido de un mercado de barrio y el compromiso de siempre darte calidad. <em>Always Quality.</em>"
+             data-en="We serve you in <strong>Spanish and English</strong>, with the warm feel of a neighborhood market and a commitment to always give you quality. <em>Always Quality.</em>">
+             Atendemos en <strong>español</strong>, con el trato cálido de un mercado de barrio y el compromiso de siempre darte calidad. <em>Always Quality.</em>
+          </p>
+        </div>
+        <div class="fotos-side">
+          <img src="images/02-logo-vitrina-edit.jpg" alt="Logo de Jaimez Grocery en la vitrina" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="papel rojo"></div>
+
+  <section id="productos">
+    <div class="wrap">
+      <h2 class="titulo" data-es="Nuestros productos" data-en="Our products">Nuestros productos
+        <span class="sub" data-es="Todo lo que tu cocina y tu hogar necesitan" data-en="Everything your kitchen and home need">Todo lo que tu cocina y tu hogar necesitan</span>
+      </h2>
+
+      <div class="prod-grid">
+        <div class="card">
+          <img src="images/03-pasillo-abarrotes-edit.jpg" alt="Pasillo de abarrotes" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Abarrotes" data-en="Groceries">Abarrotes</h3>
+            <p data-es="Latería, granos, condimentos y productos de despensa." data-en="Canned goods, grains, seasonings and pantry staples.">Latería, granos, condimentos y productos de despensa.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/22-tortillas-edit.jpg" alt="Tortillas de maíz Tortillas Buena" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Tortillas" data-en="Tortillas">Tortillas</h3>
+            <p data-es="Tortillas de maíz frescas, hechas con 100% maíz." data-en="Fresh corn tortillas, made with 100% corn.">Tortillas de maíz frescas, hechas con 100% maíz.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/04-refrigerador-bebidas-edit4.jpg" alt="Refrigerador con sodas y bebidas" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Sodas y bebidas" data-en="Sodas &amp; drinks">Sodas y bebidas</h3>
+            <p data-es="Refrescos mexicanos, aguas y bebidas frías." data-en="Mexican sodas, waters and cold drinks.">Refrescos mexicanos, aguas y bebidas frías.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/08-pasillo-snacks.jpg" alt="Pasillo de snacks y botanas" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Snacks y botanas" data-en="Snacks">Snacks y botanas</h3>
+            <p data-es="Antojitos, dulces y botanas para toda la familia." data-en="Treats, candy and snacks for the whole family.">Antojitos, dulces y botanas para toda la familia.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/07-frutas-edit.jpg" alt="Frutas y verduras frescas" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Frutas y verduras" data-en="Fruits &amp; vegetables">Frutas y verduras</h3>
+            <p data-es="Productos frescos seleccionados cada día." data-en="Fresh produce selected every day.">Productos frescos seleccionados cada día.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/21-condimentos-edit.jpg" alt="Condimentos, especias y chiles secos" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Condimentos y especias" data-en="Seasonings &amp; spices">Condimentos y especias</h3>
+            <p data-es="Especias, hierbas y chiles secos: mulato, puya, ancho." data-en="Spices, herbs and dried chiles: mulato, puya, ancho.">Especias, hierbas y chiles secos: mulato, puya, ancho.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/10-perfumes-edit.jpg" alt="Perfumes y colonias Jafra" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Perfumes" data-en="Perfumes">Perfumes</h3>
+            <p data-es="Perfumes y colonias Jafra para dama, caballero y niños." data-en="Jafra perfumes and colognes for women, men and kids.">Perfumes y colonias Jafra para dama, caballero y niños.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/11-belleza-edit.jpg" alt="Cosméticos Mary Kay y Clearproof" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Belleza y cuidado personal" data-en="Beauty &amp; personal care">Belleza y cuidado personal</h3>
+            <p data-es="Cosméticos y cuidado de la piel Mary Kay y Clearproof." data-en="Mary Kay and Clearproof cosmetics and skincare.">Cosméticos y cuidado de la piel Mary Kay y Clearproof.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/12-hogar-edit.jpg" alt="Productos para el hogar Amway y Glister" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Hogar y cuidado" data-en="Home &amp; care">Hogar y cuidado</h3>
+            <p data-es="Limpieza y cuidado bucal Amway y Glister." data-en="Amway and Glister cleaning and oral-care products.">Limpieza y cuidado bucal Amway y Glister.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/20-ropa-edit.jpg" alt="Ropa y accesorios mexicanos" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Ropa y accesorios" data-en="Apparel &amp; accessories">Ropa y accesorios</h3>
+            <p data-es="Jerseys de México, gorras y banderas Virgen de Guadalupe." data-en="Mexico jerseys, caps and Virgen de Guadalupe flags.">Jerseys de México, gorras y banderas Virgen de Guadalupe.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/19-pinatas-edit.jpg" alt="Piñatas mexicanas de estrella" loading="lazy" />
+          <div class="card-body">
+            <h3 data-es="Piñatas" data-en="Piñatas">Piñatas</h3>
+            <p data-es="Piñatas tradicionales de estrella para tus fiestas." data-en="Traditional star piñatas for your parties.">Piñatas tradicionales de estrella para tus fiestas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lista-prod">
+        <span class="chip" data-es="🧀 Lácteos y quesos" data-en="🧀 Dairy &amp; cheese">🧀 Lácteos y quesos</span>
+        <span class="chip" data-es="🍬 Dulces mexicanos" data-en="🍬 Mexican candy">🍬 Dulces mexicanos</span>
+        <span class="chip" data-es="🛒 y mucho más" data-en="🛒 and much more">🛒 y mucho más</span>
+      </div>
+
+      <div class="ebt">
+        <strong data-es="Aceptamos EBT / SNAP" data-en="We accept EBT / SNAP">Aceptamos EBT / SNAP</strong>
+        <span data-es="Usa tus beneficios con nosotros, fácil y sin complicaciones." data-en="Use your benefits with us — easy and hassle-free.">Usa tus beneficios con nosotros, fácil y sin complicaciones.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="serv" id="servicios">
+    <div class="wrap">
+      <h2 class="titulo" data-es="Servicios" data-en="Services">Servicios
+        <span class="sub" data-es="Más que una tienda, tu punto de confianza" data-en="More than a store — your trusted spot">Más que una tienda, tu punto de confianza</span>
+      </h2>
+
+      <div class="serv-grid">
+        <div class="serv-card">
+          <img class="serv-img" src="images/15-maxisend-blue-edit.jpg" alt="Maxi Send" loading="lazy" />
+          <h3>Maxi Send</h3>
+          <p data-es="Envíos de dinero rápidos y seguros. Manda dinero a tu familia sin salir del barrio." data-en="Fast, secure money transfers. Send money to your family without leaving the neighborhood.">Envíos de dinero rápidos y seguros. Manda dinero a tu familia sin salir del barrio.</p>
+        </div>
+        <div class="serv-card rojo">
+          <img class="serv-img" src="images/16-lottery-banner.jpg" alt="New Jersey Lottery" loading="lazy" />
+          <h3>Lottery</h3>
+          <p data-es="Juega tu suerte con la NJ Lottery directamente en la tienda." data-en="Try your luck with the NJ Lottery right here in the store.">Juega tu suerte con la NJ Lottery directamente en la tienda.</p>
+        </div>
+        <div class="serv-card maiz">
+          <h3 data-es="Todo tipo de pago" data-en="All payment types">Todo tipo de pago</h3>
+          <p data-es="Aceptamos todas las tarjetas y EBT / SNAP." data-en="We accept all major cards and EBT / SNAP.">Aceptamos todas las tarjetas y EBT / SNAP.</p>
+          <img class="pago-img" src="images/17-pagos-tarjetas.jpg" alt="Aceptamos Visa, American Express, Apple Pay, Mastercard, Maestro y Visa Electron" loading="lazy" />
+          <img class="pago-img" src="images/18-ebt-snap.jpg" alt="Aceptamos EBT / SNAP" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="papel maiz"></div>
+
+  <section id="ubicacion">
+    <div class="wrap">
+      <h2 class="titulo" data-es="Ubicación y horario" data-en="Location &amp; hours">Ubicación y horario
+        <span class="sub" data-es="Visítanos en Brick, NJ" data-en="Visit us in Brick, NJ">Visítanos en Brick, NJ</span>
+      </h2>
+
+      <div class="ubi-grid">
+        <div class="mapa">
+          <iframe
+            src="https://maps.google.com/maps?q=1017%20Cedar%20Bridge%20Ave%2C%20Brick%2C%20NJ%2008723&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Jaimez Grocery"></iframe>
+        </div>
+
+        <div class="nap">
+          <div class="item">
+            <span class="ico">📍</span>
+            <div>
+              <div class="label" data-es="Dirección" data-en="Address">Dirección</div>
+              <div class="val">1017 Cedar Bridge Ave<br />Brick, NJ 08723</div>
+            </div>
+          </div>
+          <div class="item">
+            <span class="ico">📞</span>
+            <div>
+              <div class="label" data-es="Teléfonos" data-en="Phones">Teléfonos</div>
+              <div class="val">
+                <a href="tel:+16098325274">(609) 832-5274</a> <span data-es="· principal" data-en="· main">· principal</span><br />
+                <a href="tel:+16098325275">(609) 832-5275</a> <span data-es="· secundario" data-en="· secondary">· secundario</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <span class="ico">🕒</span>
+            <div style="flex:1">
+              <div class="label" data-es="Horario" data-en="Hours">Horario</div>
+              <table class="horario-tabla" id="horario">
+                <tr data-dia="1-6"><td data-es="Lunes a Sábado" data-en="Monday to Saturday">Lunes a Sábado</td><td>9:30 AM – 8:00 PM</td></tr>
+                <tr data-dia="0"><td data-es="Domingo" data-en="Sunday">Domingo</td><td>10:00 AM – 7:00 PM</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="ubi-btns">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=1017+Cedar+Bridge+Ave,+Brick,+NJ+08723" target="_blank" rel="noopener" class="btn btn-verde" data-es="📍 Cómo llegar" data-en="📍 Directions">📍 Cómo llegar</a>
+            <a href="tel:+16098325274" class="btn btn-rojo" data-es="📞 Llamar" data-en="📞 Call">📞 Llamar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">Jaimez Grocery</div>
+      <div class="fnap">
+        1017 Cedar Bridge Ave, Brick, NJ 08723<br />
+        <a href="tel:+16098325274">(609) 832-5274</a> · <a href="tel:+16098325275">(609) 832-5275</a><br />
+        <span data-es="Lun–Sáb 9:30 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM" data-en="Mon–Sat 9:30 AM – 8:00 PM · Sun 10:00 AM – 7:00 PM">Lun–Sáb 9:30 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM</span>
+      </div>
+
+      <div class="fbtns">
+        <a href="https://www.google.com/maps/search/?api=1&query=Jaimez+Grocery+1017+Cedar+Bridge+Ave+Brick+NJ" target="_blank" rel="noopener" class="fbtn">🗺️ Google Maps</a>
+        <a href="https://maps.apple.com/?q=Jaimez%20Grocery&address=1017%20Cedar%20Bridge%20Ave,%20Brick,%20NJ%2008723" target="_blank" rel="noopener" class="fbtn"> Apple Maps</a>
+        <a href="https://www.facebook.com/search/top?q=Jaimez%20Grocery%20LLC" target="_blank" rel="noopener" class="fbtn">📘 Facebook</a>
+      </div>
+
+      <div class="legal">
+        © <span id="anio"></span> Jaimez Grocery LLC · <span data-es="Productos mexicanos auténticos · Always Quality" data-en="Authentic Mexican products · Always Quality">Productos mexicanos auténticos · Always Quality</span><br />
+        <span data-es="Sitio por" data-en="Site by">Sitio por</span> <a href="#">Imperio Digital 365</a> — Medenezer LLC
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  // ===== Horario (hora local de la tienda, NJ): Lun–Sáb 9:30–20:00 · Dom 10:00–19:00 =====
+  var HORARIO = {
+    0: { o: 600,  c: 1140 }, // Domingo 10:00–19:00
+    1: { o: 570,  c: 1200 }, // 9:30–20:00
+    2: { o: 570,  c: 1200 },
+    3: { o: 570,  c: 1200 },
+    4: { o: 570,  c: 1200 },
+    5: { o: 570,  c: 1200 },
+    6: { o: 570,  c: 1200 }
+  };
+  function fmt(mins) {
+    var h = Math.floor(mins / 60), m = mins % 60;
+    var ap = h >= 12 ? 'PM' : 'AM'; var h12 = h % 12; if (h12 === 0) h12 = 12;
+    return h12 + ':' + (m < 10 ? '0' + m : m) + ' ' + ap;
+  }
+  var DIAS = {
+    es: ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],
+    en: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+  };
+  var T = {
+    open:      { es: 'Abierto ahora', en: 'Open now' },
+    closed:    { es: 'Cerrado ahora', en: 'Closed now' },
+    closesAt:  { es: '· cierra a las ', en: '· closes at ' },
+    opensToday:{ es: '· abre hoy a las ', en: '· opens today at ' },
+    opensDay:  { es: '· abre ', en: '· opens ' },
+    at:        { es: ' a las ', en: ' at ' }
+  };
+
+  // ===== Idioma =====
+  var LANG_KEY = 'jaimez_lang';
+  function detectLang() {
+    var saved = localStorage.getItem(LANG_KEY);
+    if (saved === 'es' || saved === 'en') return saved;
+    var n = (navigator.language || 'es').toLowerCase();
+    return n.indexOf('es') === 0 ? 'es' : 'en';
+  }
+  var LANG = detectLang();
+
+  function applyLang(lang) {
+    LANG = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(function (el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val == null) return;
+      if (el.hasAttribute('data-html')) el.innerHTML = val; else el.textContent = val;
+    });
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    updateEstado();
+  }
+  window.applyLang = applyLang;
+
+  function updateEstado() {
+    var now;
+    try { now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })); }
+    catch (e) { now = new Date(); }
+    var day = now.getDay();
+    var mins = now.getHours() * 60 + now.getMinutes();
+    var h = HORARIO[day];
+    var open = mins >= h.o && mins < h.c;
+
+    var cont = document.getElementById('estado');
+    var txt = document.getElementById('estado-texto');
+    var det = document.getElementById('estado-detalle');
+    cont.classList.remove('abierto', 'cerrado');
+
+    if (open) {
+      cont.classList.add('abierto');
+      txt.textContent = T.open[LANG];
+      det.textContent = T.closesAt[LANG] + fmt(h.c);
+    } else {
+      cont.classList.add('cerrado');
+      txt.textContent = T.closed[LANG];
+      if (mins < h.o) {
+        det.textContent = T.opensToday[LANG] + fmt(h.o);
+      } else {
+        var sig = (day + 1) % 7;
+        det.textContent = T.opensDay[LANG] + DIAS[LANG][sig] + T.at[LANG] + fmt(HORARIO[sig].o);
+      }
+    }
+    document.querySelectorAll('#horario tr').forEach(function (tr) {
+      var r = tr.getAttribute('data-dia');
+      var match = (r === '0' && day === 0) || (r === '1-6' && day >= 1 && day <= 6);
+      tr.classList.toggle('hoy', match);
+    });
+  }
+
+  applyLang(LANG);
+</script>
+
+</body>
+</html>

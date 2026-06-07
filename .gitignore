@@ -1,0 +1,20 @@
+# Configuración local y secretos (NO subir)
+.claude/
+
+# Sistema operativo
+.DS_Store
+**/.DS_Store
+
+# Artefacto de despliegue (se regenera)
+deploy/
+
+# Carpetas temporales de trabajo
+_nuevas/
+_rev/
+
+# Originales pesados del celular y respaldos (no forman parte del sitio)
+/IMG_*.HEIC
+/IMG_*.heic
+/IMG_*.jpg
+/IMG_*.jpeg
+*.zip
