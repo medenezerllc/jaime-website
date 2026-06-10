@@ -17,7 +17,7 @@ Estos datos deben aparecer EXACTAMENTE igual en la web, Google Maps y Apple Maps
 - **Dirección:** 1017 Cedar Bridge Ave, Brick, NJ 08723  (ZIP+4 USPS: 08723-4025)
 - **Teléfono principal:** (609) 832-5274
 - **Teléfono secundario:** (609) 832-5275
-- **Horario:** Lunes a Sábado 9:30 AM – 8:00 PM · Domingo 10:00 AM – 7:00 PM  (actualizado 2026-06; antes Lun–Sáb abría 9:00)
+- **Horario:** Lunes a Viernes 9:30 AM – 8:00 PM · Sábado y Domingo 9:30 AM – 6:00 PM  (actualizado 2026-06)
 - **Categoría:** Tienda de abarrotes / Grocery store (productos mexicanos)
 - **Redes:** Facebook (Jaimez Grocery LLC)
 

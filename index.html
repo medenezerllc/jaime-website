@@ -41,15 +41,15 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "09:30",
       "closes": "20:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "10:00",
-      "closes": "19:00"
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "09:30",
+      "closes": "18:00"
     }
   ]
 }
@@ -496,8 +496,8 @@
             <div style="flex:1">
               <div class="label" data-es="Horario" data-en="Hours">Horario</div>
               <table class="horario-tabla" id="horario">
-                <tr data-dia="1-6"><td data-es="Lunes a Sábado" data-en="Monday to Saturday">Lunes a Sábado</td><td>9:30 AM – 8:00 PM</td></tr>
-                <tr data-dia="0"><td data-es="Domingo" data-en="Sunday">Domingo</td><td>10:00 AM – 7:00 PM</td></tr>
+                <tr data-dia="1-5"><td data-es="Lunes a Viernes" data-en="Monday to Friday">Lunes a Viernes</td><td>9:30 AM – 8:00 PM</td></tr>
+                <tr data-dia="0,6"><td data-es="Sábado y Domingo" data-en="Saturday &amp; Sunday">Sábado y Domingo</td><td>9:30 AM – 6:00 PM</td></tr>
               </table>
             </div>
           </div>
@@ -517,7 +517,7 @@
       <div class="fnap">
         1017 Cedar Bridge Ave, Brick, NJ 08723<br />
         <a href="tel:+16098325274">(609) 832-5274</a> · <a href="tel:+16098325275">(609) 832-5275</a><br />
-        <span data-es="Lun–Sáb 9:30 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM" data-en="Mon–Sat 9:30 AM – 8:00 PM · Sun 10:00 AM – 7:00 PM">Lun–Sáb 9:30 AM – 8:00 PM · Dom 10:00 AM – 7:00 PM</span>
+        <span data-es="Lun–Vie 9:30 AM – 8:00 PM · Sáb–Dom 9:30 AM – 6:00 PM" data-en="Mon–Fri 9:30 AM – 8:00 PM · Sat–Sun 9:30 AM – 6:00 PM">Lun–Vie 9:30 AM – 8:00 PM · Sáb–Dom 9:30 AM – 6:00 PM</span>
       </div>
 
       <div class="fbtns">
@@ -538,13 +538,13 @@
 
   // ===== Horario (hora local de la tienda, NJ): Lun–Sáb 9:30–20:00 · Dom 10:00–19:00 =====
   var HORARIO = {
-    0: { o: 600,  c: 1140 }, // Domingo 10:00–19:00
-    1: { o: 570,  c: 1200 }, // 9:30–20:00
+    0: { o: 570,  c: 1080 }, // Domingo 9:30–18:00
+    1: { o: 570,  c: 1200 }, // Lun–Vie 9:30–20:00
     2: { o: 570,  c: 1200 },
     3: { o: 570,  c: 1200 },
     4: { o: 570,  c: 1200 },
     5: { o: 570,  c: 1200 },
-    6: { o: 570,  c: 1200 }
+    6: { o: 570,  c: 1080 }  // Sábado 9:30–18:00
   };
   function fmt(mins) {
     var h = Math.floor(mins / 60), m = mins % 60;
@@ -620,7 +620,7 @@
     }
     document.querySelectorAll('#horario tr').forEach(function (tr) {
       var r = tr.getAttribute('data-dia');
-      var match = (r === '0' && day === 0) || (r === '1-6' && day >= 1 && day <= 6);
+      var match = (r === '0,6' && (day === 0 || day === 6)) || (r === '1-5' && day >= 1 && day <= 5);
       tr.classList.toggle('hoy', match);
     });
   }
