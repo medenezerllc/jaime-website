@@ -11,9 +11,10 @@ Sitio web *one-page* para **Jaimez Grocery**, tienda de abarrotes y productos me
 - **Nombre:** Jaimez Grocery
 - **Dirección:** 1017 Cedar Bridge Ave, Brick, NJ 08723
 - **Teléfonos:** (609) 832-5274 · (609) 832-5275
-- **Horario:** Lunes a Sábado 9:30 AM – 8:00 PM · Domingo 10:00 AM – 7:00 PM
-- **Aceptamos:** EBT / SNAP, Apple Pay, Visa, Mastercard, pagos sin contacto
+- **Horario:** Lunes a Viernes 9:30 AM – 8:00 PM · Sábado y Domingo 9:30 AM – 6:00 PM
+- **Aceptamos:** EBT / SNAP, Apple Pay, Visa, Mastercard, American Express y pagos sin contacto
 - **Servicios:** Envíos de dinero Maxi Send · NJ Lottery
+- **Productos:** abarrotes, tortillas, sodas y bebidas, snacks, frutas y verduras, condimentos y chiles secos (mulato, puya, ancho), lácteos y quesos, dulces mexicanos, perfumes (Jafra), belleza y cuidado personal (Mary Kay, Clearproof), hogar y limpieza (Amway, Glister), ropa y accesorios (jerseys de México, gorras, banderas de la Virgen de Guadalupe) y piñatas
 
 ---
 

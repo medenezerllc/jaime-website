@@ -35,11 +35,11 @@ Estos datos deben aparecer EXACTAMENTE igual en la web, Google Maps y Apple Maps
 ### Estructura / secciones
 1. **Hero:** logo, "Jaimez Grocery", frase "Productos mexicanos auténticos · Always Quality". Botones: Llamar / Cómo llegar / Ver horario. Indicador Abierto/Cerrado.
 2. **Sobre nosotros:** tienda de abarrotes y productos mexicanos para la comunidad de Brick; calidad, buen servicio, atención en español.
-3. **Productos:** abarrotes en general, frutas y verduras, tortillas, lácteos y quesos, condimentos, sodas y bebidas, productos de limpieza, perfumes, piñatas. Destacar **Aceptamos EBT / SNAP**.
+3. **Productos:** abarrotes en general, tortillas de maíz frescas, sodas y bebidas, snacks, frutas y verduras, condimentos y chiles secos (mulato, puya, ancho), lácteos y quesos, dulces mexicanos, perfumes (Jafra), belleza y cuidado personal (Mary Kay, Clearproof), hogar y limpieza (Amway, Glister), ropa y accesorios (jerseys de México, gorras, banderas de la Virgen de Guadalupe), piñatas. Destacar **Aceptamos EBT / SNAP**.
 4. **Servicios:**
    - **Envíos de dinero con Maxi Send** (envía dinero a tu familia rápido y seguro).
    - **Lottery** (lotería — NJ Lottery).
-   - Acepta todo tipo de pago: Apple Pay, Visa, Mastercard, pagos sin contacto, EBT.
+   - Acepta todo tipo de pago: Apple Pay, Visa, Mastercard, American Express, pagos sin contacto, EBT.
 5. **Ubicación y horario:** mapa embebido + botón Cómo llegar. NAP completo.
 6. **Footer:** NAP repetido, enlace a Facebook, botones a Google Maps y Apple Maps (cuando se reclamen).
 
@@ -76,8 +76,8 @@ Ubicación sugerida en la web:
 ---
 
 ## PENDIENTES / SIGUIENTES PASOS
-- [ ] Registrar dominio (ej. jaimezgrocery.com).
-- [ ] Construir la web (Fase 1) con esta estructura e imágenes.
+- [x] Registrar dominio → **jaimezgrocery.com** (activo).
+- [x] Construir la web (Fase 1) → **publicada en Cloudflare**, HTTPS activo, NAP consistente.
 - [ ] Foto propia fresca de frutas y verduras.
 - [ ] Reclamar/verificar Google Business Profile y Apple Business Connect.
 - [ ] Sincronizar web ↔ mapas (mismo NAP).
