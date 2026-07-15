@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Frente</title>
+<style>
+  :root{--green:#0e7a3b;--green-d:#0a5a2c;--red:#c62828;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:3.5in;height:2in;overflow:hidden;background:#fff;}
+  body{font-family:"Helvetica Neue",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .card{width:3.5in;height:2in;position:relative;overflow:hidden;
+    background:radial-gradient(130% 90% at 50% -10%, #159a4b 0%, var(--green) 45%, var(--green-d) 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.2in 0.24in;}
+  .tri{position:absolute;left:0;right:0;height:7px;display:flex;z-index:2;}
+  .tri i{flex:1;} .tri .g{background:var(--green);} .tri .w{background:#fff;} .tri .r{background:var(--red);}
+  .logocard{background:#fff;border-radius:8px;padding:5px 7px;box-shadow:0 3px 9px rgba(0,0,0,.28);}
+  .logocard img{width:1.9in;display:block;}
+  .tag{color:#fdf7e6;font-family:Georgia,serif;font-style:italic;font-size:10px;text-align:center;margin-top:8px;line-height:1.3;}
+  .deli{margin-top:7px;color:#fff;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;
+    border:1px solid rgba(255,255,255,.55);border-radius:20px;padding:2.5px 11px;}
+</style></head>
+<body>
+  <div class="card">
+    <div class="tri" style="top:0"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div class="logocard"><img src="assets/logo.png" alt="Jaimez Grocery"></div>
+    <div class="tag">Productos mexicanos auténticos<br>· Always Quality ·</div>
+    <div class="deli">Grocery Store</div>
+    <div class="tri" style="bottom:0"><i class="r"></i><i class="w"></i><i class="g"></i></div>
+  </div>
+</body></html>

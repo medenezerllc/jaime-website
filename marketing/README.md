@@ -10,7 +10,13 @@ código QR que abre **https://jaimezgrocery.com/**.
 |---|---|---|---|
 | `Jaimez-Triptico.pdf` | Tríptico, 2 páginas (exterior + interior) | **11 × 8.5"** | "Brochures" · Full Bleed · **Gloss** |
 | `Jaimez-Tarjeta-IMPRIMIR.pdf` | Tarjeta, 2 páginas (frente + reverso) | **3.5 × 2"** | "Business Cards" · 14 pt · doble cara |
+| `Jaimez-Tarjeta-FRENTE.png` | Solo el frente (verde con logo), 1344×768 px (~384 DPI) | **3.5 × 2"** | Subir a la pestaña **Front** |
+| `Jaimez-Tarjeta-REVERSO.png` | Solo el reverso (crema con QR), 1344×768 px (~384 DPI) | **3.5 × 2"** | Subir a la pestaña **Back** |
 | `Jaimez-Tarjeta-PROOF.pdf` | Vista de referencia (las 2 caras juntas) | Carta | — (solo revisar) |
+
+> El editor "Upload Your Own" de Staples pide **frente y reverso como imágenes
+> separadas**. Usa los PNG `-FRENTE` y `-REVERSO` (uno por pestaña). El PDF
+> `-IMPRIMIR` sirve para procesos que aceptan un solo archivo de 2 páginas.
 
 ## Especificaciones de pedido sugeridas
 
@@ -23,6 +29,7 @@ código QR que abre **https://jaimezgrocery.com/**.
 - `triptico.html` — tríptico (fuente).
 - `tarjeta.html` — tarjeta con vista previa y notas (fuente).
 - `tarjeta-print.html` — tarjeta a sangre completa 3.5×2 (genera el PDF de impresión).
+- `tarjeta-frente.html` / `tarjeta-reverso.html` — cada cara por separado (generan los PNG).
 - `assets/` — fotos optimizadas usadas en las piezas.
 - `qr-jaimez-black.svg` / `.png` / `qr-jaimez-green.svg` — código QR a jaimezgrocery.com.
 

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Reverso</title>
+<style>
+  :root{--green:#0e7a3b;--green-d:#0a5a2c;--red:#c62828;--red-d:#a81f1f;--cream:#f8f2e2;--ink:#241d16;--muted:#6b5e4f;--line:#e4d9c0;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:3.5in;height:2in;overflow:hidden;background:#fff;}
+  body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+  .card{width:3.5in;height:2in;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#fbf7ec,var(--cream));display:flex;padding:0.2in 0.24in 0.17in;gap:0.18in;}
+  .tri{position:absolute;left:0;right:0;height:7px;display:flex;z-index:2;}
+  .tri i{flex:1;} .tri .g{background:var(--green);} .tri .w{background:#fff;} .tri .r{background:var(--red);}
+  .info{flex:1;display:flex;flex-direction:column;}
+  .bn{font-family:Georgia,serif;font-weight:700;font-size:15px;color:var(--green-d);line-height:1;}
+  .sub{font-size:7.6px;letter-spacing:1.4px;text-transform:uppercase;color:var(--red-d);font-weight:700;margin-top:3px;}
+  .rowe{font-size:9.7px;color:#33291f;line-height:1.5;margin-top:9px;}
+  .rowe .i{color:var(--green);font-weight:700;} .rowe b{color:var(--ink);}
+  .web{margin-top:auto;font-family:Georgia,serif;font-weight:700;font-size:11px;color:var(--green-d);}
+  .qrwrap{width:1.32in;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .qrwrap .box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px;}
+  .qrwrap svg{width:1.12in;height:1.12in;display:block;}
+  .qrwrap .cap{font-size:7.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:5px;text-align:center;font-weight:700;}
+</style></head>
+<body>
+  <div class="card">
+    <div class="tri" style="top:0"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div class="info">
+      <div class="bn serif">Jaimez Grocery</div>
+      <div class="sub">Tienda de productos mexicanos</div>
+      <div class="rowe">
+        <span class="i">📍</span> <b>1017 Cedar Bridge Ave</b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Brick, NJ 08723<br>
+        <span class="i">📞</span> <b>(609) 832-5274</b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;(609) 832-5275<br>
+        <span class="i">🕒</span> Lun–Vie 9:30 AM – 8:00 PM<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Sáb–Dom 9:30 AM – 6:00 PM
+      </div>
+      <div class="web">jaimezgrocery.com</div>
+    </div>
+    <div class="qrwrap">
+      <div class="box">
+        <svg viewBox="0 0 370 370" xmlns="http://www.w3.org/2000/svg"><g transform="scale(10)"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#000" d="M2 2.5h7m1 0h3m1 0h1m3 0h2m2 0h2m1 0h2m1 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h3m1 0h2m2 0h1m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m2 0h5m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h4m5 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h1m2 0h1m5 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m6 0h1m2 0h2m1 0h3m-22 1h3m1 0h1m1 0h4m1 0h1m1 0h2m1 0h1m1 0h1m1 0h6m2 0h3m-31 1h4m4 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m3 0h1m1 0h1m-32 1h1m1 0h2m1 0h5m1 0h1m3 0h1m1 0h1m2 0h1m3 0h3m1 0h1m1 0h1m-32 1h2m1 0h1m3 0h1m1 0h1m4 0h1m1 0h1m1 0h8m3 0h2m1 0h1m-33 1h2m2 0h1m1 0h3m1 0h1m2 0h4m1 0h4m2 0h2m6 0h1m-31 1h4m2 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h2m2 0h2m2 0h1m1 0h1m-31 1h1m1 0h1m1 0h1m2 0h1m3 0h4m5 0h1m1 0h1m1 0h1m3 0h2m-32 1h1m1 0h3m2 0h8m3 0h2m1 0h5m1 0h1m2 0h1m1 0h1m-33 1h3m1 0h4m1 0h1m1 0h8m4 0h1m4 0h1m1 0h1m1 0h1m-30 1h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3m1 0h2m1 0h1m-27 1h3m2 0h4m1 0h2m2 0h1m4 0h1m5 0h4m1 0h1m-30 1h2m2 0h1m2 0h3m1 0h7m1 0h2m1 0h2m1 0h2m1 0h4m-33 1h2m3 0h5m1 0h2m3 0h1m5 0h1m2 0h5m1 0h2m-33 1h1m2 0h1m3 0h1m1 0h1m3 0h2m2 0h1m2 0h1m3 0h1m5 0h1m1 0h1m-33 1h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h2m4 0h1m1 0h2m6 0h3m-32 1h1m1 0h3m2 0h2m1 0h2m1 0h2m6 0h2m1 0h1m2 0h6m-33 1h1m3 0h5m1 0h1m3 0h1m2 0h1m2 0h1m3 0h5m2 0h2m-25 1h2m1 0h1m1 0h2m2 0h2m5 0h1m3 0h3m1 0h1m-33 1h7m4 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h4m-32 1h1m5 0h1m2 0h2m2 0h2m1 0h1m2 0h2m2 0h2m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h4m1 0h1m3 0h2m1 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h5m3 0h5m4 0h1m2 0h2m1 0h1m-32 1h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h1m1 0h1m1 0h2m1 0h2m-27 1h1m5 0h1m2 0h3m1 0h2m1 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m-30 1h7m2 0h2m1 0h2m5 0h1m1 0h5m4 0h2"/></g></svg>
+      </div>
+      <div class="cap">Escanéame · Scan me</div>
+    </div>
+    <div class="tri" style="bottom:0"><i class="r"></i><i class="w"></i><i class="g"></i></div>
+  </div>
+</body></html>
