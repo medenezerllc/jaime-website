@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaimez Grocery — Tarjeta de presentación</title>
+<style>
+  :root{
+    --green:#0e7a3b; --green-d:#0a5a2c; --red:#c62828; --red-d:#a81f1f;
+    --cream:#f8f2e2; --ink:#241d16; --muted:#6b5e4f; --gold:#d8b24a; --line:#e4d9c0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:#d8d3c7;}
+  body{font-family:"Helvetica Neue",Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    display:flex; flex-direction:column; align-items:center; padding:26px 0 40px; gap:22px;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+
+  @page{ size:letter; margin:0.5in; }
+
+  .note{ font-size:12.5px; color:#4a4235; max-width:3.5in; text-align:center; line-height:1.45;}
+  .note b{color:#241d16;}
+  .lbl-side{ font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#8a7c68; text-align:center; margin-bottom:6px;}
+
+  /* Business card: 3.5in x 2in */
+  .card{ width:3.5in; height:2in; border-radius:12px; overflow:hidden; position:relative;
+    box-shadow:0 5px 16px rgba(0,0,0,.22); }
+  .tri{ position:absolute; left:0; right:0; height:7px; display:flex; }
+  .tri i{flex:1;} .tri .g{background:var(--green);} .tri .w{background:#fff;} .tri .r{background:var(--red);}
+
+  /* ---- FRONT (green branded) ---- */
+  .front{ background:
+      radial-gradient(130% 90% at 50% -10%, #159a4b 0%, var(--green) 45%, var(--green-d) 100%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0.2in 0.24in;}
+  .front .logocard{ background:#fff; border-radius:8px; padding:5px 7px; box-shadow:0 3px 9px rgba(0,0,0,.28); }
+  .front .logocard img{ width:1.9in; display:block; }
+  .front .tag{ color:#fdf7e6; font-family:Georgia,serif; font-style:italic; font-size:10px; text-align:center; margin-top:8px; line-height:1.3;}
+  .front .deli{ margin-top:7px; color:#fff; font-size:8px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700;
+    border:1px solid rgba(255,255,255,.55); border-radius:20px; padding:2.5px 11px;}
+
+  /* ---- BACK (cream info) ---- */
+  .back{ background:linear-gradient(180deg,#fbf7ec,var(--cream)); display:flex; padding:0.2in 0.24in 0.17in; gap:0.18in;}
+  .back .info{ flex:1; display:flex; flex-direction:column; }
+  .back .bn{ font-family:Georgia,serif; font-weight:700; font-size:15px; color:var(--green-d); line-height:1;}
+  .back .bn .z{color:var(--red);}
+  .back .sub{ font-size:7.6px; letter-spacing:1.4px; text-transform:uppercase; color:var(--red-d); font-weight:700; margin-top:3px;}
+  .rowe{ font-size:9.7px; color:#33291f; line-height:1.5; margin-top:9px;}
+  .rowe .i{ color:var(--green); font-weight:700;}
+  .rowe b{color:var(--ink);}
+  .back .web{ margin-top:auto; font-family:Georgia,serif; font-weight:700; font-size:11px; color:var(--green-d);}
+  .back .qrwrap{ width:1.32in; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+  .back .qrwrap .box{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px; box-shadow:0 2px 6px rgba(0,0,0,.1);}
+  .back .qrwrap svg{ width:1.12in; height:1.12in; display:block;}
+  .back .qrwrap .cap{ font-size:7.5px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-top:5px; text-align:center; font-weight:700;}
+
+  @media print{
+    html,body{background:#fff;}
+    .note,.lbl-side{ color:#333 !important;}
+    .card{ box-shadow:none; outline:1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="note">
+    <b>Tarjeta de presentación — Jaimez Grocery</b><br>
+    Tamaño estándar 3.5 × 2 in. Dos caras: FRENTE + REVERSO. Lista para imprimir en Staples (pide “Business Cards”, 3.5×2”, doble cara). El QR abre <b>jaimezgrocery.com</b>.
+  </div>
+
+  <div>
+    <div class="lbl-side">Frente · Front</div>
+    <div class="card front">
+      <div class="tri" style="top:0"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+      <div class="logocard"><img src="assets/logo.png" alt="Jaimez Grocery"></div>
+      <div class="tag">Productos mexicanos auténticos<br>· Always Quality ·</div>
+      <div class="deli">Grocery Store</div>
+      <div class="tri" style="bottom:0"><i class="r"></i><i class="w"></i><i class="g"></i></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl-side">Reverso · Back</div>
+    <div class="card back">
+      <div class="tri" style="top:0"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+      <div class="info">
+        <div class="bn serif">Jaimez Grocery</div>
+        <div class="sub">Tienda de productos mexicanos</div>
+        <div class="rowe">
+          <span class="i">📍</span> <b>1017 Cedar Bridge Ave</b><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Brick, NJ 08723<br>
+          <span class="i">📞</span> <b>(609) 832-5274</b><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(609) 832-5275<br>
+          <span class="i">🕒</span> Lun–Vie 9:30 AM – 8:00 PM<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Sáb–Dom 9:30 AM – 6:00 PM
+        </div>
+        <div class="web">jaimezgrocery.com</div>
+      </div>
+      <div class="qrwrap">
+        <div class="box">
+          <svg viewBox="0 0 370 370" xmlns="http://www.w3.org/2000/svg"><g transform="scale(10)"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#000" d="M2 2.5h7m1 0h3m1 0h1m3 0h2m2 0h2m1 0h2m1 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h3m1 0h2m2 0h1m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m2 0h5m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h4m5 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h1m2 0h1m5 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m6 0h1m2 0h2m1 0h3m-22 1h3m1 0h1m1 0h4m1 0h1m1 0h2m1 0h1m1 0h1m1 0h6m2 0h3m-31 1h4m4 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m3 0h1m1 0h1m-32 1h1m1 0h2m1 0h5m1 0h1m3 0h1m1 0h1m2 0h1m3 0h3m1 0h1m1 0h1m-32 1h2m1 0h1m3 0h1m1 0h1m4 0h1m1 0h1m1 0h8m3 0h2m1 0h1m-33 1h2m2 0h1m1 0h3m1 0h1m2 0h4m1 0h4m2 0h2m6 0h1m-31 1h4m2 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h2m2 0h2m2 0h1m1 0h1m-31 1h1m1 0h1m1 0h1m2 0h1m3 0h4m5 0h1m1 0h1m1 0h1m3 0h2m-32 1h1m1 0h3m2 0h8m3 0h2m1 0h5m1 0h1m2 0h1m1 0h1m-33 1h3m1 0h4m1 0h1m1 0h8m4 0h1m4 0h1m1 0h1m1 0h1m-30 1h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3m1 0h2m1 0h1m-27 1h3m2 0h4m1 0h2m2 0h1m4 0h1m5 0h4m1 0h1m-30 1h2m2 0h1m2 0h3m1 0h7m1 0h2m1 0h2m1 0h2m1 0h4m-33 1h2m3 0h5m1 0h2m3 0h1m5 0h1m2 0h5m1 0h2m-33 1h1m2 0h1m3 0h1m1 0h1m3 0h2m2 0h1m2 0h1m3 0h1m5 0h1m1 0h1m-33 1h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h2m4 0h1m1 0h2m6 0h3m-32 1h1m1 0h3m2 0h2m1 0h2m1 0h2m6 0h2m1 0h1m2 0h6m-33 1h1m3 0h5m1 0h1m3 0h1m2 0h1m2 0h1m3 0h5m2 0h2m-25 1h2m1 0h1m1 0h2m2 0h2m5 0h1m3 0h3m1 0h1m-33 1h7m4 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h4m-32 1h1m5 0h1m2 0h2m2 0h2m1 0h1m2 0h2m2 0h2m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h4m1 0h1m3 0h2m1 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h5m3 0h5m4 0h1m2 0h2m1 0h1m-32 1h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h1m1 0h1m1 0h2m1 0h2m-27 1h1m5 0h1m2 0h3m1 0h2m1 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m-30 1h7m2 0h2m1 0h2m5 0h1m1 0h5m4 0h2"/></g></svg>
+        </div>
+        <div class="cap">Escanéame · Scan me</div>
+      </div>
+      <div class="tri" style="bottom:0"><i class="r"></i><i class="w"></i><i class="g"></i></div>
+    </div>
+  </div>
+
+</body>
+</html>

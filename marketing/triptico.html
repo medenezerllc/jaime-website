@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaimez Grocery — Tríptico</title>
+<style>
+  :root{
+    --green:#0e7a3b; --green-d:#0a5a2c; --red:#c62828; --red-d:#a81f1f;
+    --cream:#f8f2e2; --cream-2:#fbf7ec; --ink:#241d16; --muted:#6b5e4f;
+    --gold:#c19a3e; --line:#e4d9c0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:#d8d3c7;}
+  body{font-family:"Helvetica Neue",Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .serif{font-family:Georgia,"Times New Roman",serif;}
+
+  /* ---- Print setup: US Letter landscape, tri-fold ---- */
+  @page{ size:11in 8.5in; margin:0; }
+  .page{
+    width:11in; height:8.5in; background:var(--cream);
+    display:flex; overflow:hidden; position:relative;
+    margin:0 auto 26px; box-shadow:0 4px 22px rgba(0,0,0,.25);
+  }
+  .panel{ width:3.6667in; height:8.5in; padding:0.34in 0.30in; position:relative; display:flex; flex-direction:column;}
+  .panel + .panel{ border-left:1px dashed rgba(0,0,0,.12); } /* guía de doblez (tenue) */
+
+  /* tricolor band */
+  .band{ height:9px; width:100%; display:flex; }
+  .band i{flex:1;} .band .g{background:var(--green);} .band .w{background:#fff;} .band .r{background:var(--red);}
+
+  /* papel picado strip */
+  .picado{ height:16px; width:100%;
+    background:
+      linear-gradient(135deg, transparent 50%, var(--green) 50%) 0 0/13px 16px repeat-x,
+      linear-gradient(-135deg, transparent 50%, var(--green) 50%) 6.5px 0/13px 16px repeat-x;
+  }
+  .picado.red{ background:
+      linear-gradient(135deg, transparent 50%, var(--red) 50%) 0 0/13px 16px repeat-x,
+      linear-gradient(-135deg, transparent 50%, var(--red) 50%) 6.5px 0/13px 16px repeat-x;}
+
+  h2.title{ font-size:23px; line-height:1.05; color:var(--green-d); letter-spacing:.2px; }
+  h2.title .en{ display:block; font-size:15px; color:var(--red); font-style:italic; font-weight:normal; margin-top:2px;}
+  .rule{ width:52px; height:3px; background:var(--gold); border-radius:2px; margin:9px 0 12px;}
+  p.body{ font-size:10.7px; line-height:1.5; color:#33291f; margin-bottom:8px;}
+  p.body .en{ color:var(--muted); font-style:italic; }
+  .quote{ font-family:Georgia,serif; font-style:italic; color:var(--red-d); font-size:12.5px; line-height:1.35; text-align:center; margin-top:auto; padding-top:10px;}
+
+  /* COVER */
+  .cover{ align-items:center; text-align:center; background:
+      radial-gradient(120% 60% at 50% 0%, #fffdf6 0%, var(--cream) 60%);}
+  .cover .logo{ width:100%; max-width:3.0in; border-radius:8px; box-shadow:0 3px 10px rgba(0,0,0,.12); margin-top:6px;}
+  .cover .name{ font-size:16px; letter-spacing:2px; color:var(--green-d); margin-top:14px; text-transform:uppercase; font-weight:700;}
+  .cover .tag{ font-family:Georgia,serif; font-style:italic; font-size:14px; color:var(--red); margin-top:7px; line-height:1.3;}
+  .cover .deli{ display:inline-block; margin-top:12px; padding:5px 14px; border:1.5px solid var(--green); color:var(--green-d);
+      border-radius:20px; font-size:11px; letter-spacing:1.5px; font-weight:700; text-transform:uppercase;}
+  .cover .mid{ margin-top:auto; text-align:center;}
+  .cover .flourish{ color:var(--gold); font-size:20px; line-height:1; margin-bottom:8px;}
+  .cover .mid .l1{ font-family:Georgia,serif; font-size:15px; color:var(--green-d); line-height:1.3;}
+  .cover .mid .l2{ font-style:italic; font-size:11px; color:var(--red); margin-top:3px;}
+  .cover .addr{ font-size:11px; color:#4a3d2e; margin-top:auto; line-height:1.5;}
+  .cover .addr b{color:var(--ink);}
+
+  /* BACK panel */
+  .back h3{ font-family:Georgia,serif; color:var(--green-d); font-size:17px; margin-bottom:3px;}
+  .back .en-h{ font-style:italic; color:var(--red); font-size:12px; margin-bottom:10px;}
+  .info{ font-size:11px; line-height:1.55; color:#33291f;}
+  .info .lbl{ text-transform:uppercase; letter-spacing:1px; font-size:9px; color:var(--green); font-weight:700; margin-top:11px;}
+  .info b{color:var(--ink);}
+  .qrbox{ text-align:center; margin-top:14px; padding:12px; background:#fff; border:1px solid var(--line); border-radius:10px;}
+  .qrbox svg{ width:1.5in; height:1.5in; }
+  .qrbox .cap{ font-size:10px; color:var(--muted); margin-top:6px; line-height:1.3;}
+  .qrbox .cap b{ color:var(--green-d);}
+  .back .thanks{ margin:auto 0; text-align:center; font-family:Georgia,serif; color:var(--green-d); font-size:17px; line-height:1.2;}
+  .back .thanks span{ display:block; font-style:italic; font-size:11px; color:var(--red); margin-top:4px;}
+  .back .thanks .fl{ color:var(--gold); font-size:15px; margin-bottom:7px;}
+
+  /* WELCOME flap */
+  .welcome{ background:linear-gradient(180deg,#fbf7ec,#f4ecd8); align-items:center; text-align:center;}
+  .welcome .big{ font-family:Georgia,serif; font-size:26px; color:var(--green-d); line-height:1.05; margin-top:6px;}
+  .welcome .big .en{ display:block; font-size:15px; color:var(--red); font-style:italic; margin-top:4px;}
+  .welcome p{ font-size:11px; line-height:1.55; color:#40342600; }
+  .welcome .msg{ font-size:11.3px; line-height:1.6; color:#3a2f22; margin:14px 4px;}
+  .ebt{ margin-top:14px; background:var(--green); color:#fff; border-radius:12px; padding:14px 10px; box-shadow:0 3px 8px rgba(0,0,0,.15);}
+  .ebt .b1{ font-size:19px; font-weight:800; letter-spacing:1px;}
+  .ebt .b2{ font-size:10.5px; font-style:italic; opacity:.95; margin-top:3px;}
+  .pays{ margin-top:auto; }
+  .pays .lbl{ font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--green); font-weight:700; margin-bottom:6px;}
+  .pays img{ width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.12);}
+
+  /* PRODUCTS */
+  .productos .grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:2px;}
+  .card{ background:#fff; border:1px solid var(--line); border-radius:9px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .card img{ width:100%; height:0.82in; object-fit:cover; display:block;}
+  .card .cap{ padding:5px 6px 6px;}
+  .card .es{ font-size:9.8px; font-weight:700; color:var(--ink); line-height:1.1;}
+  .card .en{ font-size:8.6px; font-style:italic; color:var(--muted);}
+  .more{ margin-top:9px; font-size:9.6px; line-height:1.5; color:#4a3d2e; text-align:center;}
+  .more b{color:var(--green-d);}
+
+  /* SERVICES */
+  .servicios .svc{ display:flex; gap:9px; align-items:center; margin-bottom:10px; }
+  .servicios .svc img{ width:0.85in; height:0.62in; object-fit:contain; background:#fff; padding:3px; border:1px solid var(--line); border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,.1); flex:0 0 auto;}
+  .servicios .svc .t{ font-family:Georgia,serif; font-weight:700; font-size:12.5px; color:var(--green-d); line-height:1.1;}
+  .servicios .svc .d{ font-size:9.6px; color:#3a2f22; line-height:1.35; margin-top:2px;}
+  .servicios .svc .d .en{ font-style:italic; color:var(--muted);}
+  .hours{ margin-top:4px; background:#fff; border:1px solid var(--line); border-radius:10px; padding:11px 12px;}
+  .hours .h-h{ font-family:Georgia,serif; color:var(--red-d); font-size:12.5px; margin-bottom:6px; text-align:center; font-weight:700;}
+  .hours table{ width:100%; font-size:10.3px; color:#33291f; border-collapse:collapse;}
+  .hours td{ padding:2px 0;} .hours td:last-child{ text-align:right; font-weight:700;}
+  .contact{ margin-top:auto; text-align:center; font-size:10.5px; line-height:1.5; color:#33291f;}
+  .contact .ph{ font-family:Georgia,serif; font-size:15px; color:var(--green-d); font-weight:700;}
+
+  .foot-note{ text-align:center; font-size:11px; color:#555; margin:8px auto 30px; max-width:11in;}
+  @media print{ html,body{background:#fff;} .page{box-shadow:none; margin:0;} .foot-note{display:none;} .page + .page{page-break-before:always;} }
+</style>
+</head>
+<body>
+
+<div class="foot-note">
+  <b>Tríptico Jaimez Grocery</b> — Página 1 = EXTERIOR · Página 2 = INTERIOR · Imprimir a doble cara (flip on short edge), tamaño Carta (Letter) horizontal, doblar en tres. La PORTADA queda al frente.
+</div>
+
+<!-- =================== PÁGINA 1 · EXTERIOR =================== -->
+<section class="page">
+
+  <!-- PANEL IZQ: CONTRAPORTADA / VISÍTANOS -->
+  <div class="panel back">
+    <div class="band"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div style="height:12px"></div>
+    <h3 class="serif">Visítanos</h3>
+    <div class="en-h">Visit us</div>
+    <div class="info">
+      <div class="lbl">Dirección · Address</div>
+      <b>1017 Cedar Bridge Ave</b><br>Brick, NJ 08723
+      <div class="lbl">Teléfonos · Phone</div>
+      <b>(609) 832-5274</b> · principal<br>
+      <b>(609) 832-5275</b> · secundario
+      <div class="lbl">Horario · Hours</div>
+      Lun–Vie · Mon–Fri 9:30 AM – 8:00 PM<br>
+      Sáb–Dom · Sat–Sun 9:30 AM – 6:00 PM
+    </div>
+
+    <div class="qrbox">
+      <svg viewBox="0 0 370 370" xmlns="http://www.w3.org/2000/svg"><g transform="scale(10)"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#000" d="M2 2.5h7m1 0h3m1 0h1m3 0h2m2 0h2m1 0h2m1 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h3m1 0h2m2 0h1m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m2 0h5m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h4m5 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m2 0h1m2 0h1m5 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m6 0h1m2 0h2m1 0h3m-22 1h3m1 0h1m1 0h4m1 0h1m1 0h2m1 0h1m1 0h1m1 0h6m2 0h3m-31 1h4m4 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h2m3 0h1m1 0h1m-32 1h1m1 0h2m1 0h5m1 0h1m3 0h1m1 0h1m2 0h1m3 0h3m1 0h1m1 0h1m-32 1h2m1 0h1m3 0h1m1 0h1m4 0h1m1 0h1m1 0h8m3 0h2m1 0h1m-33 1h2m2 0h1m1 0h3m1 0h1m2 0h4m1 0h4m2 0h2m6 0h1m-31 1h4m2 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h2m2 0h2m2 0h1m1 0h1m-31 1h1m1 0h1m1 0h1m2 0h1m3 0h4m5 0h1m1 0h1m1 0h1m3 0h2m-32 1h1m1 0h3m2 0h8m3 0h2m1 0h5m1 0h1m2 0h1m1 0h1m-33 1h3m1 0h4m1 0h1m1 0h8m4 0h1m4 0h1m1 0h1m1 0h1m-30 1h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3m1 0h2m1 0h1m-27 1h3m2 0h4m1 0h2m2 0h1m4 0h1m5 0h4m1 0h1m-30 1h2m2 0h1m2 0h3m1 0h7m1 0h2m1 0h2m1 0h2m1 0h4m-33 1h2m3 0h5m1 0h2m3 0h1m5 0h1m2 0h5m1 0h2m-33 1h1m2 0h1m3 0h1m1 0h1m3 0h2m2 0h1m2 0h1m3 0h1m5 0h1m1 0h1m-33 1h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h2m4 0h1m1 0h2m6 0h3m-32 1h1m1 0h3m2 0h2m1 0h2m1 0h2m6 0h2m1 0h1m2 0h6m-33 1h1m3 0h5m1 0h1m3 0h1m2 0h1m2 0h1m3 0h5m2 0h2m-25 1h2m1 0h1m1 0h2m2 0h2m5 0h1m3 0h3m1 0h1m-33 1h7m4 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h4m-32 1h1m5 0h1m2 0h2m2 0h2m1 0h1m2 0h2m2 0h2m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h4m1 0h1m3 0h2m1 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h5m3 0h5m4 0h1m2 0h2m1 0h1m-32 1h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h1m1 0h1m1 0h2m1 0h2m-27 1h1m5 0h1m2 0h3m1 0h2m1 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m-30 1h7m2 0h2m1 0h2m5 0h1m1 0h5m4 0h2"/></g></svg>
+      <div class="cap">Escanea y visita nuestra web<br><b>jaimezgrocery.com</b></div>
+    </div>
+    <div class="thanks">
+      <div class="fl">✦ ❋ ✦</div>
+      ¡Te esperamos!
+      <span>See you soon · ¡Gracias por tu preferencia!</span>
+    </div>
+    <div class="picado"></div>
+  </div>
+
+  <!-- PANEL MEDIO: BIENVENIDA / EBT -->
+  <div class="panel welcome">
+    <div class="big serif">¡Bienvenido!<span class="en">Welcome</span></div>
+    <div class="msg">
+      Gracias por visitar tu tienda de abarrotes mexicanos en Brick.
+      Aquí encuentras lo de casa, fresco y a buen precio.
+      <br><br>
+      <i style="color:#7a6a54">Thank you for visiting your Mexican grocery store in Brick — the products of home, fresh and fairly priced.</i>
+    </div>
+    <div class="ebt">
+      <div class="b1">Aceptamos EBT / SNAP</div>
+      <div class="b2">We accept EBT / SNAP benefits</div>
+    </div>
+    <div class="pays">
+      <div class="lbl">Todas las formas de pago · All payment types</div>
+      <img src="assets/s-pagos.jpg" alt="Formas de pago">
+    </div>
+  </div>
+
+  <!-- PANEL DER: PORTADA -->
+  <div class="panel cover">
+    <div class="band" style="position:absolute;top:0;left:0"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <img class="logo" src="assets/logo.png" alt="Jaimez Grocery">
+    <div class="name serif">Jaimez Grocery</div>
+    <div class="tag">Productos mexicanos auténticos<br>· Always Quality ·</div>
+    <div class="deli">Grocery Store</div>
+    <div class="mid">
+      <div class="flourish">✦ ❋ ✦</div>
+      <div class="l1">Tu tienda de productos<br>mexicanos en Brick, NJ</div>
+      <div class="l2">Your neighborhood Mexican grocery</div>
+    </div>
+    <div class="addr">
+      <b>Brick, New Jersey</b><br>
+      1017 Cedar Bridge Ave · (609) 832-5274<br>
+      jaimezgrocery.com
+    </div>
+    <div class="picado red" style="width:calc(100% + 0.6in); margin:14px -0.30in -0.34in;"></div>
+  </div>
+
+</section>
+
+<!-- =================== PÁGINA 2 · INTERIOR =================== -->
+<section class="page">
+
+  <!-- PANEL 1: NUESTRA HISTORIA -->
+  <div class="panel historia">
+    <div class="band"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div style="height:12px"></div>
+    <h2 class="title serif">Nuestra Historia<span class="en">Our Story</span></h2>
+    <div class="rule"></div>
+    <img src="assets/fachada.jpg" alt="Fachada Jaimez Grocery" style="width:100%;border-radius:9px;box-shadow:0 3px 9px rgba(0,0,0,.15);margin-bottom:11px;">
+    <p class="body">
+      En <b>Jaimez Grocery</b> llevamos a Brick el sabor auténtico de México. Somos tu tienda de abarrotes de barrio, donde encuentras los productos de casa: frescos, de calidad y a buen precio.
+    </p>
+    <p class="body">
+      Te atendemos en español e inglés, con el trato cálido de un mercado mexicano de toda la vida. Lo más importante para nosotros es que te sientas como en casa.
+    </p>
+    <p class="body"><span class="en">A neighborhood Mexican grocery in the heart of Brick, NJ — bringing the flavors of home with warm, bilingual service. Because here, you're family. Always Quality.</span></p>
+    <div class="quote">“El sabor de casa,<br>en cada producto.”<br><span style="font-size:10.5px;color:#8a6a4a">The taste of home, in every product.</span></div>
+  </div>
+
+  <!-- PANEL 2: NUESTROS PRODUCTOS -->
+  <div class="panel productos">
+    <div class="band"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div style="height:12px"></div>
+    <h2 class="title serif">Nuestros Productos<span class="en">Our Products</span></h2>
+    <div class="rule"></div>
+    <div class="grid">
+      <div class="card"><img src="assets/p-abarrotes.jpg"><div class="cap"><div class="es">Abarrotes</div><div class="en">Groceries</div></div></div>
+      <div class="card"><img src="assets/p-tortillas.jpg"><div class="cap"><div class="es">Tortillas frescas</div><div class="en">Fresh tortillas</div></div></div>
+      <div class="card"><img src="assets/p-frutas.jpg"><div class="cap"><div class="es">Frutas y verduras</div><div class="en">Fruits &amp; veggies</div></div></div>
+      <div class="card"><img src="assets/p-condimentos.jpg"><div class="cap"><div class="es">Chiles y condimentos</div><div class="en">Chiles &amp; spices</div></div></div>
+      <div class="card"><img src="assets/p-bebidas.jpg"><div class="cap"><div class="es">Sodas y bebidas</div><div class="en">Sodas &amp; drinks</div></div></div>
+      <div class="card"><img src="assets/p-pinatas.jpg"><div class="cap"><div class="es">Piñatas</div><div class="en">Party piñatas</div></div></div>
+    </div>
+    <div class="more">
+      <b>Y mucho más ·</b> lácteos y quesos · dulces mexicanos · perfumes (Jafra) · belleza (Mary Kay, Clearproof) · hogar (Amway, Glister) · ropa y accesorios de México.
+      <br><span style="font-style:italic;color:#7a6a54">And much more — dairy &amp; cheese, Mexican candy, perfumes, beauty, home care &amp; apparel.</span>
+    </div>
+    <div style="margin-top:auto"></div>
+    <div class="picado"></div>
+  </div>
+
+  <!-- PANEL 3: SERVICIOS -->
+  <div class="panel servicios">
+    <div class="band"><i class="g"></i><i class="w"></i><i class="r"></i></div>
+    <div style="height:12px"></div>
+    <h2 class="title serif">Servicios<span class="en">Services</span></h2>
+    <div class="rule"></div>
+
+    <div class="svc">
+      <img src="assets/s-maxisend.jpg" alt="Maxi Send">
+      <div><div class="t">Maxi Send</div><div class="d">Envíos de dinero rápidos y seguros a tu familia.<br><span class="en">Fast, secure money transfers.</span></div></div>
+    </div>
+    <div class="svc">
+      <img src="assets/s-lottery.jpg" alt="NJ Lottery">
+      <div><div class="t">NJ Lottery</div><div class="d">Prueba tu suerte con la lotería de Nueva Jersey.<br><span class="en">Try your luck — NJ Lottery.</span></div></div>
+    </div>
+    <div class="svc">
+      <img src="assets/s-ebt.jpg" alt="EBT SNAP">
+      <div><div class="t">EBT / SNAP</div><div class="d">Usa tus beneficios con nosotros, fácil y sin complicaciones.<br><span class="en">Use your benefits with us.</span></div></div>
+    </div>
+
+    <div class="hours">
+      <div class="h-h serif">Horario · Hours</div>
+      <table>
+        <tr><td>Lunes – Viernes<br><span style="font-size:8.6px;color:#8a7c68">Mon – Fri</span></td><td>9:30 AM – 8:00 PM</td></tr>
+        <tr><td>Sábado – Domingo<br><span style="font-size:8.6px;color:#8a7c68">Sat – Sun</span></td><td>9:30 AM – 6:00 PM</td></tr>
+      </table>
+    </div>
+
+    <div class="contact">
+      <div class="ph">(609) 832-5274</div>
+      1017 Cedar Bridge Ave, Brick, NJ<br>
+      <b style="color:var(--green-d)">jaimezgrocery.com</b>
+    </div>
+    <div style="height:6px"></div>
+    <div class="picado red"></div>
+  </div>
+
+</section>
+
+</body>
+</html>
